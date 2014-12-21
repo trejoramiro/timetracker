@@ -9,35 +9,36 @@ import calendar
 
 from datetime import datetime
 
-
+projectList = []
 #Enter your project's name
-project = raw_input("Enter Project Name: ")
+projectName = raw_input("Enter Project Name: ")
 
-#Start project object instance
+#Place project into projectList
+projectList.append(projectName)
+
 start = datetime.now()
-print("Your Project Name is {}".format(project))
-print("Start time: {}:{}:{}".format(start.hour,start.minute,start.second))
-print("On: {}:{}:{}".format(start.month,start.day,start.year))
+print("Active Project Name: {}".format(projectList[0]))
+print("Start Time: {}:{}:{}".format(start.hour,start.minute,start.second))
+print("Date: {}:{}:{}".format(start.month,start.day,start.year))
 
+while(projectName != "QUIT"):
+    
+    if(projectName == "STATUS"):
+    
+        sum_hour = abs(start.hour - datetime.now().hour)
+        sum_minute = abs(start.minute - datetime.now().minute)
+        sum_second = abs(start.second - datetime.now().second)
 
-#math variables 
+        print("Status: {} hours {} minutes {} seconds".format(sum_hour,sum_minute,sum_second))
+                  
+     if(projectName == "PAUSE"):
+        
+        pause_period = datetime.now()
+        
 
-continues = raw_input("Enter to continue ")
-end = datetime.now()
-
-sum_hour = abs(start.hour - datetime.now().hour)
-sum_minute = abs(start.minute - datetime.now().minute)
-sum_second = abs(start.second - datetime.now().second)
-
-print("Status: {} hours {} minutes {} seconds".format(sum_hour,sum_minute,sum_second))
-#Open CSV
-                     
-#Record the time
-
-
-                     
-                     
-                     
+     else:
+        continue
+                                  
                      
 #####Notes to Self#####
 ## the program must be able to save each entered time
