@@ -26,6 +26,13 @@ with open('discoveries.csv','rb') as f:
             
     f.close()
 
+#open the cvs file and save the data into a list    
+f = open('discoveries.csv','rb')
+csv_data = list(csv.reader(f,delimiter=','))
+f.close()
+
+print(csv_data[1])
+
 print("The average year is: {}".format(years/(rownum-1)))
 
     #line1 = filereader.next() #Skip the first row
