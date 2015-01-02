@@ -1,7 +1,6 @@
 import csv
 
 
-
 with open('discoveries.csv','rb') as f:
     reader = csv.reader(f, delimiter=',')
     rownum = 0
@@ -26,12 +25,31 @@ with open('discoveries.csv','rb') as f:
             
     f.close()
 
-#open the cvs file and save the data into a list    
+
+csv_data = []
+
+#open the cvs file and save the data into a list
 f = open('discoveries.csv','rb')
-csv_data = list(csv.reader(f,delimiter=','))
+#reader = csv.reader(f,delimiter=',')
+#print(reader.next())
+#print(reader)
+csv_data = list(csv.reader(f, delimiter=','))
 f.close()
 
-print(csv_data[1])
+#combining two csv files may be a small issue bec we need to eliminate its fieldnames
+
+f2 = open('discoveries.csv','rb')
+csv_data2 = list(csv.reader(f2, delimiter=','))
+f2.close()
+
+csv_data2.pop(0)
+
+print(len(csv_data))
+print(len(csv_data2))
+
+mergedData = csv_data + csv_data2
+
+print(len(mergedData))
 
 print("The average year is: {}".format(years/(rownum-1)))
 
