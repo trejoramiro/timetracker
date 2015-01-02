@@ -91,10 +91,12 @@ x = [projectTitle,projectType,stringDate,totalMinutes,noteSection]
 with open ('january.csv', 'ab') as f:
     wtr = csv.writer(f)
     wtr.writerow(x)
-# writes the data on one row!! not good
+# writes the data on the fieldname row!! not good!
 
 #print exit message
 print("Project {} Saved and Closed.".format(projectTitle))   
 print("Timetracker Closed.")        
 
 #Timetracker does not recognize AM and PM, must fix for next verison. 
+#minutes are writen wrong, i got 1400 minutes, note possible!!!
+#also status and pause are still giving ups problems, status is not recording correctly
